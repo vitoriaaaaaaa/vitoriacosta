@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Consultoria de texto - Consultoria de Texto</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap');
+
+  :root {
+    --bege: #FFF1E6;
+    --mostarda: #DFAE42;
+    --laranja: #E45B15;
+    --rosa: #EAA8BE;
+    --preto: #1a1a1a;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bege);
+    color: var(--preto);
+    line-height: 1.5;
+  }
+
+  /* Cabeçalho e logo */
+  header {
+    background-color: var(--laranja);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+  .logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.6rem;
+    color: var(--bege);
+    background-color: var(--rosa);
+    border-radius: 8px;
+    padding: 10px 28px;
+    box-shadow: 4px 4px 0 var(--mostarda);
+    user-select: none;
+    letter-spacing: 0.04em;
+    text-align: center;
+    width: max-content;
+    text-transform: capitalize;
+  }
+
+  /* Seção Hero */
+  .hero {
+    max-width: 900px;
+    margin: 60px auto 50px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.4rem;
+    color: var(--laranja);
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: var(--preto);
+  }
+
+  .btn-primary {
+    background-color: var(--laranja);
+    color: var(--bege);
+    border: none;
+    padding: 14px 42px;
+    border-radius: 30px 15px 30px 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 4px 4px 0 var(--mostarda);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: var(--rosa);
+  }
+
+  /* Seção Serviços (Produtos) */
+  section#products {
+    max-width: 960px;
+    margin: 60px auto 90px;
+    padding: 0 20px;
+  }
+
+  #products h2 {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    color: var(--laranja);
+    font-size: 2.5rem;
+    margin-bottom: 45px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: var(--bege);
+    border-radius: 30px 24px 18px 18px;
+    box-shadow: 5px 5px 0 var(--mostarda);
+    width: 310px;
+    padding: 32px 28px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    box-shadow: 7px 7px 0 var(--rosa);
+    transform: translateY(-7px);
+  }
+
+  .card-icon {
+    font-size: 4.8rem;
+    margin-bottom: 18px;
+    user-select: none;
+    color: var(--laranja);
+  }
+
+  .card h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: var(--laranja);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .card p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--preto);
+    text-align: center;
+    flex-grow: 1;
+    margin-bottom: 30px;
+    line-height: 1.3;
+  }
+
+  .card button {
+    background-color: var(--laranja);
+    border-radius: 30px 18px 30px 18px;
+    color: var(--bege);
+    padding: 12px 34px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0 var(--mostarda);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card button:hover,
+  .card button:focus {
+    background-color: var(--rosa);
+  }
+
+  /* Rodapé */
+  footer {
+    background-color: var(--mostarda);
+    color: var(--preto);
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: inset 0 8px 10px rgba(228, 91, 21, 0.13);
+  }
+
+  footer a {
+    color: var(--preto);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  footer .social-icons {
+    margin: 15px 0 10px;
+  }
+
+  footer .social-icons a {
+    color: var(--preto);
+    font-size: 1.5rem;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+  }
+
+  footer .social-icons a:hover,
+  footer .social-icons a:focus {
+    color: var(--rosa);
+  }
+
+  /* Ícones estilo emoji para os cards */
+  .icon-book::before {
+    content: "📚";
+    display: block;
+    font-size: 4.8rem;
+    margin-bottom: 15px;
+  }
+
+  .icon-pen::before {
+    content: "✍️";
+    display: block;
+    font-size: 4.8rem;
+    margin-bottom: 15px;
+  }
+
+  .icon-star::before {
+    content: "✨";
+    display: block;
+    font-size: 4.8rem;
+    margin-bottom: 15px;
+  }
+
+  /* Responsividade */
+  @media (max-width: 700px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<!-- Font Awesome para ícones sociais -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-label="Logo Consultoria de texto">Consultoria de texto</div>
+</header>
+
+<section class="hero" role="banner">
+  <h1>Orientação individual para projetos literários e acadêmicos</h1>
+  <p>Te ajudo com a revisão, correção e elaboração dos seus trabalhos</p>
+  <button class="btn-primary" aria-label="Faça seu orçamento">Faça seu orçamento</button>
+</section>
+
+<section id="products" aria-labelledby="products-title">
+  <h2 id="products-title">Nossos serviços</h2>
+  <div class="cards">
+    <article class="card" tabindex="0" aria-labelledby="prod1-title" aria-describedby="prod1-desc">
+      <div class="card-icon icon-book" aria-hidden="true"></div>
+      <h3 id="prod1-title">Revisão textual</h3>
+      <p id="prod1-desc">Aprimoro sua escrita e deixo seu texto coeso e coerente.</p>
+      <button>Saiba Mais</button>
+    </article>
+
+    <article class="card" tabindex="0" aria-labelledby="prod2-title" aria-describedby="prod2-desc">
+      <div class="card-icon icon-pen" aria-hidden="true"></div>
+      <h3 id="prod2-title">Consultoria individual</h3>
+      <p id="prod2-desc">Reviso seu trabalho e oriento sua escrita.</p>
+      <button>Saiba Mais</button>
+    </article>
+
+    <article class="card" tabindex="0" aria-labelledby="prod3-title" aria-describedby="prod3-desc">
+      <div class="card-icon icon-star" aria-hidden="true"></div>
+      <h3 id="prod3-title">Elaboração de textos acadêmicos</h3>
+      <p id="prod3-desc">Elaboro seu trabalho do zero.</p>
+      <button>Saiba Mais</button>
+    </article>
+  </div>
+</section>
+
+<footer aria-label="Contato e informações">
+  <p>Entre em contato: <a href="mailto:jesusvitoriac@gmail.com">jesusvitoriac@gmail.com</a> | 84 994386670</p>
+  <div class="social-icons" aria-label="Redes sociais no rodapé">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <p style="margin-top:12px; font-size:0.875rem;">&copy; 2025 Consultoria de texto. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
